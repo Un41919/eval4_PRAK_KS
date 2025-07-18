@@ -1,0 +1,23 @@
+Package: seeCorrelation
+Type: Package
+Title: A Package for Correlation Analysis and Visualization
+Version: 0.1.0
+Author: c(
+    person(
+      "Nailul", "Muna",
+      email = "23611094@students.uii.ac.id",
+      role = c("aut", "cre")
+    )
+  )
+Maintainer: Nailul Muna <23611094@students.uii.ac.id>
+Description: This package provides functions for calculating correlations and visualizing the relationship between two variables.
+License: MIT
+Encoding: UTF-8
+LazyData: false
+VignetteBuilder: knitr
+Suggests:
+  knitr, rmarkdown
+RoxygenNote: 7.3.2
+Imports: 
+    ggplot2
+

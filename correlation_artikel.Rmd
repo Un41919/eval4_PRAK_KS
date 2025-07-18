@@ -1,0 +1,98 @@
+---
+title: Hubungan Antara Kebersihan Lingkungan dan Kesehatan dengan Korelasi Pencemaran
+  Air dan DBD
+author: "23611094_Nailul lMuna"
+date: "2025-07-15"
+output:
+  word_document:
+    toc: no
+    toc_depth: '2'
+  pdf_document:
+    toc: no
+    toc_depth: 2
+    number_sections: yes
+  html_document:
+    toc: no
+    toc_depth: 2
+    number_sections: yes
+    theme: united
+    df_print: paged
+bibliography: penyakit.bib
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+![](https://iik.ac.id/blog/wp-content/uploads/2023/01/kesehatan-lingkungan.jpeg)
+
+`Kesehatan masyarakat sangat dipengaruhi oleh faktor lingkungan, termasuk kebersihan dan tingkat pencemaran yang ada di sekitar kita. Banyak penelitian menunjukkan bahwa kebersihan lingkungan berhubungan erat dengan kesehatan, di mana pencemaran lingkungan dapat meningkatkan risiko berbagai penyakit. Artikel ini akan membahas hubungan antara kebersihan lingkungan, khususnya pencemaran air, dengan kesehatan, terutama Demam Berdarah Dengue (DBD). Dalam analisis ini, kita juga akan mengintegrasikan penelitian-penelitian terkait faktor risiko infeksi, seperti pada Buruli ulcer, plague di Madagascar, dan manajemen infeksi pada pasien dengan kondisi tertentu.`
+
+Penelitian mengenai faktor risiko untuk _Buruli ulcer_ di rumah sakit misi rujukan mengungkapkan bagaimana kondisi lingkungan berperan penting dalam penyebaran infeksi kulit ini. Buruli ulcer, yang merupakan infeksi kulit yang terkait erat dengan lingkungan, menunjukkan prevalensi yang lebih tinggi di daerah-daerah dengan sanitasi yang buruk dan akses terbatas ke layanan kesehatan. Temuan ini memperkuat pemahaman bahwa kebersihan lingkungan memiliki dampak signifikan terhadap kesehatan masyarakat, khususnya dalam pencegahan penyakit infeksi. [@kamble2021risk]
+
+Studi tentang patogen baru yang menyoroti wabah _plague_ di Madagascar memberikan perspektif lebih luas tentang hubungan antara lingkungan dan penyebaran penyakit. Plague yang disebabkan oleh bakteri Yersinia pestis ini menunjukkan bagaimana faktor-faktor seperti sanitasi yang buruk dan kondisi lingkungan yang mendukung pertumbuhan vektor penyakit dapat memfasilitasi penyebaran patogen berbahaya. Kasus di Madagascar ini menjadi contoh nyata bagaimana kebersihan lingkungan yang tidak memadai dapat berkontribusi pada munculnya wabah penyakit yang serius. [@rakotoarivony2019emerging]
+
+Penelitian tentang insidensi dan manajemen infeksi pada pasien dengan penyakit tertentu juga menekankan peran krusial lingkungan dalam kesehatan. Studi ini menunjukkan bahwa pasien dengan kondisi medis tertentu menjadi lebih rentan terhadap infeksi tambahan ketika berada di lingkungan yang terkontaminasi dengan sanitasi yang buruk. Hal ini menggarisbawahi pentingnya pengelolaan lingkungan yang baik tidak hanya untuk pencegahan penyakit primer, tetapi juga untuk mencegah komplikasi infeksi sekunder yang dapat memperburuk kondisi kesehatan pasien secara keseluruhan. [@kumari2020incidence]
+
+## Korelasi antara Kebersihan Lingkungan dan Kesehatan
+
+**Korelasi** adalah ukuran statistik yang menunjukkan hubungan atau asosiasi antara dua variabel. Dalam konteks kebersihan lingkungan dan kesehatan, korelasi digunakan untuk mengukur sejauh mana perubahan dalam kebersihan lingkungan (misalnya, peningkatan pencemaran udara, tanah, atau air) berhubungan dengan perubahan dalam tingkat kesehatan (misalnya, peningkatan kasus penyakit). Koefisien korelasi ini dapat bernilai positif, negatif, atau tidak ada korelasi sama sekali. Korelasi positif menunjukkan bahwa ketika satu variabel meningkat, variabel lainnya juga meningkat, sedangkan korelasi negatif menunjukkan bahwa ketika satu variabel meningkat, variabel lainnya menurun. Jika tidak ada korelasi, maka perubahan pada satu variabel tidak mempengaruhi variabel lainnya.
+
+## Rumus Korelasi Pearson
+
+Koefisien korelasi yang paling sering digunakan adalah koefisien korelasi Pearson, yang mengukur kekuatan dan arah hubungan linear antara dua variabel. Rumusnya adalah:
+$$
+r = \frac{n \left( \sum xy \right) - \left( \sum x \right) \left( \sum y \right)}{\sqrt{ \left[ n \sum x^2 - \left( \sum x \right)^2 \right] \left[ n \sum y^2 - \left( \sum y \right)^2 \right] }}
+$$
+
+Di mana:
+
+- r adalah koefisien korelasi Pearson,
+- x dan y adalah dua variabel yang ingin diukur korelasinya (misalnya, tingkat pencemaran air dan jumlah kasus DBD),
+- n adalah jumlah data yang digunakan.
+
+Interpretasi Nilai Korelasi
+Nilai koefisien korelasi r berkisar antara -1 hingga 1:
+
+- r=1: Hubungan positif sempurna (satu variabel naik, variabel lainnya juga naik)
+- r=−1: Hubungan negatif sempurna (satu variabel naik, yang lainnya turun).
+- r=0: Tidak ada hubungan linear antara dua variabel.
+[Korelasi - Kitalulus](https://www.kitalulus.com/blog/bisnis/koefisien-korelasi-adalah/)
+
+
+## Contoh Korelasi pada Pencemaran Air dan DBD
+
+Dalam analisis ini, kita mengukur hubungan antara pencemaran air dan kasus DBD di beberapa provinsi. Korelasi yang ditemukan menunjukkan adanya hubungan positif yang sangat kuat antara pencemaran air dan peningkatan jumlah kasus DBD. Artinya, semakin tinggi tingkat pencemaran air, semakin banyak kasus DBD yang tercatat.
+
+## Data dan Analisis
+
+Berikut adalah bagian dari data yang digunakan untuk analisis:
+
+| Provinsi        | DBD   | Pencemaran Air |
+|-----------------|-------|----------------|
+| Aceh           | 1533  | 729            |
+| Sumatera Utara | 5623  | 1205           |
+| Sumatera Barat | 2203  | 319            |
+| Riau           | 918   | 454            |
+| Jambi          | 720   | 614            |
+
+```{r}
+# Memuat library yang dibutuhkan
+library(seeCorrelation)
+library(readxl)
+
+# Membaca data dari file Excel
+kesehatan <- read_excel("C://Una's_Files//SEMESTER_4//PRAK_KS//eval4_1//data_eval4.xlsx")
+
+# Melakukan analisis korelasi antara DBD dan Pencemaran Air
+see_correlation(kesehatan, "DBD", "Pencemaran_air", metode = "cor")
+```
+
+Nilai korelasi antara DBD dan Pencemaran Air sebesar 0.818 menunjukkan hubungan positif yang sangat kuat. Ini berarti bahwa semakin tinggi tingkat pencemaran air, semakin banyak kasus DBD yang tercatat di berbagai provinsi. Hubungan ini mengindikasikan bahwa pencemaran air berperan signifikan dalam meningkatkan risiko penyakit seperti DBD, yang seringkali dipengaruhi oleh kondisi sanitasi dan kebersihan lingkungan.
+
+## Kesimpulan
+
+**Berdasarkan analisis korelasi yang dilakukan**, dapat disimpulkan bahwa kebersihan lingkungan, khususnya kualitas air, sangat memengaruhi kesehatan masyarakat. Pencemaran air yang tinggi dapat meningkatkan angka kejadian penyakit seperti DBD. Oleh karena itu, penting untuk meningkatkan kualitas air dan mengurangi tingkat polusi di berbagai daerah agar dapat menurunkan angka penyakit seperti DBD. Selain itu, hasil ini juga mendukung temuan dalam penelitian terkait penyakit-penyakit lainnya, seperti Buruli ulcer dan plague, yang menunjukkan bahwa lingkungan yang tidak bersih dapat meningkatkan risiko berbagai infeksi dan penyakit. Melalui upaya pengendalian pencemaran air dan perbaikan kebersihan lingkungan, diharapkan dapat mengurangi dampak kesehatan yang ditimbulkan oleh pencemaran dan meningkatkan kualitas hidup masyarakat.
+
+# Referensi

@@ -1,0 +1,347 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Hubungan Antara Kebersihan Lingkungan dan Kesehatan dengan Korelasi Pencemaran Air dan DBD},
+  pdfauthor={23611094\_Nailul lMuna},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Hubungan Antara Kebersihan Lingkungan dan Kesehatan dengan
+Korelasi Pencemaran Air dan DBD}
+\author{23611094\_Nailul lMuna}
+\date{2025-07-15}
+
+\begin{document}
+\maketitle
+
+\includegraphics{https://iik.ac.id/blog/wp-content/uploads/2023/01/kesehatan-lingkungan.jpeg}
+
+Kesehatan masyarakat sangat dipengaruhi oleh faktor lingkungan, termasuk
+kebersihan dan tingkat pencemaran yang ada di sekitar kita. Banyak
+penelitian menunjukkan bahwa kebersihan lingkungan berhubungan erat
+dengan kesehatan, di mana pencemaran lingkungan dapat meningkatkan
+risiko berbagai penyakit. Artikel ini akan membahas hubungan antara
+kebersihan lingkungan, khususnya pencemaran air, dengan kesehatan,
+terutama Demam Berdarah Dengue (DBD). Dalam analisis ini, kita juga akan
+mengintegrasikan penelitian-penelitian terkait faktor risiko infeksi,
+seperti pada Buruli ulcer, plague di Madagascar, dan manajemen infeksi
+pada pasien dengan kondisi tertentu. Penelitian mengenai faktor risiko
+untuk \emph{Buruli ulcer} di rumah sakit misi rujukan mengungkapkan
+bagaimana kondisi lingkungan berperan penting dalam penyebaran infeksi
+kulit ini. Buruli ulcer, yang merupakan infeksi kulit yang terkait erat
+dengan lingkungan, menunjukkan prevalensi yang lebih tinggi di
+daerah-daerah dengan sanitasi yang buruk dan akses terbatas ke layanan
+kesehatan. Temuan ini memperkuat pemahaman bahwa kebersihan lingkungan
+memiliki dampak signifikan terhadap kesehatan masyarakat, khususnya
+dalam pencegahan penyakit infeksi. (Kamble and Deshmukh 2021) Studi
+tentang patogen baru yang menyoroti wabah \emph{plague} di Madagascar
+memberikan perspektif lebih luas tentang hubungan antara lingkungan dan
+penyebaran penyakit. Plague yang disebabkan oleh bakteri Yersinia pestis
+ini menunjukkan bagaimana faktor-faktor seperti sanitasi yang buruk dan
+kondisi lingkungan yang mendukung pertumbuhan vektor penyakit dapat
+memfasilitasi penyebaran patogen berbahaya. Kasus di Madagascar ini
+menjadi contoh nyata bagaimana kebersihan lingkungan yang tidak memadai
+dapat berkontribusi pada munculnya wabah penyakit yang serius.
+(Rakotoarivony and al. 2019) Penelitian tentang insidensi dan manajemen
+infeksi pada pasien dengan penyakit tertentu juga menekankan peran
+krusial lingkungan dalam kesehatan. Studi ini menunjukkan bahwa pasien
+dengan kondisi medis tertentu menjadi lebih rentan terhadap infeksi
+tambahan ketika berada di lingkungan yang terkontaminasi dengan sanitasi
+yang buruk. Hal ini menggarisbawahi pentingnya pengelolaan lingkungan
+yang baik tidak hanya untuk pencegahan penyakit primer, tetapi juga
+untuk mencegah komplikasi infeksi sekunder yang dapat memperburuk
+kondisi kesehatan pasien secara keseluruhan. (Kumari and al. 2020)
+
+\hypertarget{korelasi-antara-kebersihan-lingkungan-dan-kesehatan}{%
+\subsection{Korelasi antara Kebersihan Lingkungan dan
+Kesehatan}\label{korelasi-antara-kebersihan-lingkungan-dan-kesehatan}}
+
+\textbf{Korelasi} adalah ukuran statistik yang menunjukkan hubungan atau
+asosiasi antara dua variabel. Dalam konteks kebersihan lingkungan dan
+kesehatan, korelasi digunakan untuk mengukur sejauh mana perubahan dalam
+kebersihan lingkungan (misalnya, peningkatan pencemaran udara, tanah,
+atau air) berhubungan dengan perubahan dalam tingkat kesehatan
+(misalnya, peningkatan kasus penyakit). Koefisien korelasi ini dapat
+bernilai positif, negatif, atau tidak ada korelasi sama sekali. Korelasi
+positif menunjukkan bahwa ketika satu variabel meningkat, variabel
+lainnya juga meningkat, sedangkan korelasi negatif menunjukkan bahwa
+ketika satu variabel meningkat, variabel lainnya menurun. Jika tidak ada
+korelasi, maka perubahan pada satu variabel tidak mempengaruhi variabel
+lainnya.
+
+\hypertarget{rumus-korelasi-pearson}{%
+\subsection{Rumus Korelasi Pearson}\label{rumus-korelasi-pearson}}
+
+Koefisien korelasi yang paling sering digunakan adalah koefisien
+korelasi Pearson, yang mengukur kekuatan dan arah hubungan linear antara
+dua variabel. Rumusnya adalah: \[
+r = \frac{n \left( \sum xy \right) - \left( \sum x \right) \left( \sum y \right)}{\sqrt{ \left[ n \sum x^2 - \left( \sum x \right)^2 \right] \left[ n \sum y^2 - \left( \sum y \right)^2 \right] }}
+\]
+
+Di mana:
+
+\begin{itemize}
+\tightlist
+\item
+  r adalah koefisien korelasi Pearson,
+\item
+  x dan y adalah dua variabel yang ingin diukur korelasinya (misalnya,
+  tingkat pencemaran air dan jumlah kasus DBD),
+\item
+  n adalah jumlah data yang digunakan.
+\end{itemize}
+
+Interpretasi Nilai Korelasi Nilai koefisien korelasi r berkisar antara
+-1 hingga 1:
+
+\begin{itemize}
+\tightlist
+\item
+  r=1: Hubungan positif sempurna (satu variabel naik, variabel lainnya
+  juga naik)
+\item
+  r=−1: Hubungan negatif sempurna (satu variabel naik, yang lainnya
+  turun).
+\item
+  r=0: Tidak ada hubungan linear antara dua variabel.
+\end{itemize}
+
+\hypertarget{contoh-korelasi-pada-pencemaran-air-dan-dbd}{%
+\subsection{Contoh Korelasi pada Pencemaran Air dan
+DBD}\label{contoh-korelasi-pada-pencemaran-air-dan-dbd}}
+
+Dalam analisis ini, kita mengukur hubungan antara pencemaran air dan
+kasus DBD di beberapa provinsi. Korelasi yang ditemukan menunjukkan
+adanya hubungan positif yang sangat kuat antara pencemaran air dan
+peningkatan jumlah kasus DBD. Artinya, semakin tinggi tingkat pencemaran
+air, semakin banyak kasus DBD yang tercatat.
+
+\hypertarget{data-dan-analisis}{%
+\subsection{Data dan Analisis}\label{data-dan-analisis}}
+
+Berikut adalah bagian dari data yang digunakan untuk analisis:
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+Provinsi & DBD & Pencemaran Air \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Aceh & 1533 & 729 \\
+Sumatera Utara & 5623 & 1205 \\
+Sumatera Barat & 2203 & 319 \\
+Riau & 918 & 454 \\
+Jambi & 720 & 614 \\
+\end{longtable}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Memuat library yang dibutuhkan}
+\FunctionTok{library}\NormalTok{(seeCorrelation)}
+\FunctionTok{library}\NormalTok{(readxl)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'readxl' was built under R version 4.3.3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Membaca data dari file Excel}
+\NormalTok{kesehatan }\OtherTok{\textless{}{-}} \FunctionTok{read\_excel}\NormalTok{(}\StringTok{"C://Una\textquotesingle{}s\_Files//SEMESTER\_4//PRAK\_KS//eval4\_1//data\_eval4.xlsx"}\NormalTok{)}
+
+\CommentTok{\# Melakukan analisis korelasi antara DBD dan Pencemaran Air}
+\FunctionTok{see\_correlation}\NormalTok{(kesehatan, }\StringTok{"DBD"}\NormalTok{, }\StringTok{"Pencemaran\_air"}\NormalTok{, }\AttributeTok{metode =} \StringTok{"cor"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Nilai korelasi antara DBD dan Pencemaran_air adalah 0.818047773981473"
+\end{verbatim}
+
+\includegraphics{correlation_artikel_files/figure-latex/unnamed-chunk-1-1.pdf}
+
+\begin{verbatim}
+## [1] 0.8180478
+\end{verbatim}
+
+Nilai korelasi antara DBD dan Pencemaran Air sebesar 0.818 menunjukkan
+hubungan positif yang sangat kuat. Ini berarti bahwa semakin tinggi
+tingkat pencemaran air, semakin banyak kasus DBD yang tercatat di
+berbagai provinsi. Hubungan ini mengindikasikan bahwa pencemaran air
+berperan signifikan dalam meningkatkan risiko penyakit seperti DBD, yang
+seringkali dipengaruhi oleh kondisi sanitasi dan kebersihan lingkungan.
+
+\hypertarget{kesimpulan}{%
+\subsection{Kesimpulan}\label{kesimpulan}}
+
+\textbf{Berdasarkan analisis korelasi yang dilakukan}, dapat disimpulkan
+bahwa kebersihan lingkungan, khususnya kualitas air, sangat memengaruhi
+kesehatan masyarakat. Pencemaran air yang tinggi dapat meningkatkan
+angka kejadian penyakit seperti DBD. Oleh karena itu, penting untuk
+meningkatkan kualitas air dan mengurangi tingkat polusi di berbagai
+daerah agar dapat menurunkan angka penyakit seperti DBD. Selain itu,
+hasil ini juga mendukung temuan dalam penelitian terkait
+penyakit-penyakit lainnya, seperti Buruli ulcer dan plague, yang
+menunjukkan bahwa lingkungan yang tidak bersih dapat meningkatkan risiko
+berbagai infeksi dan penyakit. Melalui upaya pengendalian pencemaran air
+dan perbaikan kebersihan lingkungan, diharapkan dapat mengurangi dampak
+kesehatan yang ditimbulkan oleh pencemaran dan meningkatkan kualitas
+hidup masyarakat.
+
+\hypertarget{referensi}{%
+\section*{Referensi}\label{referensi}}
+\addcontentsline{toc}{section}{Referensi}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-kamble2021risk}{}}%
+Kamble, S. S., and P. B. Deshmukh. 2021. {``Risk Factors for Buruli
+Ulcer in a Referral Mission Hospital.''} \emph{SciSpace}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-kumari2020incidence}{}}%
+Kumari, A., and et al. 2020. {``Incidence and Management of Infections
+in Patients with Chronic Conditions.''} \emph{SciSpace}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-rakotoarivony2019emerging}{}}%
+Rakotoarivony, I. M., and et al. 2019. {``Emerging Pathogens: The Plague
+in Madagascar.''} \emph{SciSpace}.
+
+\end{CSLReferences}
+
+\end{document}
